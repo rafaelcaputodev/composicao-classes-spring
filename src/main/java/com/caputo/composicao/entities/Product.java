@@ -21,5 +21,6 @@ public class Product {
     private Double price;
 
     @OneToOne
+    @JoinColumn(name = "order_item_id")
     private OrderItem orderItem;
 }
