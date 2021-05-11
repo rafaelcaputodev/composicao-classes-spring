@@ -21,11 +21,8 @@ public class Client {
     private String name;
     private String email;
 
-    @OneToMany
-    @JoinTable(name = "tb_client_order",
-            joinColumns = @JoinColumn(name = "client_id"),
-            inverseJoinColumns = @JoinColumn(name = "order_id"))
-    List<Order> orders = new ArrayList<>();
+    @OneToMany(mappedBy = "client")
+    private List<Order> orders = new ArrayList<>();
 
     public Client(Long id, String name, String email) {
         this.id = id;
